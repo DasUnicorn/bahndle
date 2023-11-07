@@ -20,6 +20,9 @@ async function fetchData() {
     const journeyList = await response.json();
     console.log(journeyList);
 
+    console.log(getEnd(journeyList));
+
+
   } catch (error) {
     console.error("There has been a problem with your fetch operation:", error);
   }
@@ -27,7 +30,7 @@ async function fetchData() {
 
 // Function to calculate the time traveling
 function getTravelTime(jsonData) {
-  jsonData = journeyList;
+  journeyList = jsonData;
 
   const toTimestamp = (strDate) => {
     const dt = new Date(strDate).getTime();
@@ -37,21 +40,34 @@ function getTravelTime(jsonData) {
   var endDate = journeyList.journeys[0].legs[transfers].arrival;
   var startDate = journeyList.journeys[0].legs[0].departure;
   var travelTime = Math.abs(toTimestamp(endDate) - toTimestamp(startDate));
-  console.log(travelTime);
-  console.log(secondsToHms(travelTime));
 
   return secondsToHms(travelTime);
 }
 
 // Function to get the numbers of transfers in one journey
 function getTransfers(jsonData) {
-  jsonData = journeyList;
+  journeyList = jsonData;
 
   const transfersArray = journeyList.journeys[0].legs;
   const transfers = transfersArray.length - 1;
-  console.log(transfers);
 
   return transfers;
+}
 
+//function to get the start location
+function getStart(jsonData) {
+  journeyList = jsonData;
 
+  const startStation = journeyList.journeys[0].legs[0].origin.name;
+
+  return startStation;
+}
+
+function getEnd(jsonData) {
+  journeyList = jsonData;
+
+  var transfers = getTransfers(jsonData);
+  const endStation = journeyList.journeys[0].legs[transfers].destination.name;
+
+  return endStation;
 }
