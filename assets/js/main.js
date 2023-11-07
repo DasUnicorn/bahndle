@@ -20,12 +20,6 @@ async function fetchData() {
     const journeyList = await response.json();
     console.log(journeyList);
 
-
-    const transfersArray = journeyList.journeys[0].legs;
-    const transfers = transfersArray.length - 1;
-    console.log(transfers);
-
-
   } catch (error) {
     console.error("There has been a problem with your fetch operation:", error);
   }
@@ -47,4 +41,17 @@ function getTravelTime(jsonData) {
   console.log(secondsToHms(travelTime));
 
   return secondsToHms(travelTime);
+}
+
+// Function to get the numbers of transfers in one journey
+function getTransfers(jsonData) {
+  jsonData = journeyList;
+
+  const transfersArray = journeyList.journeys[0].legs;
+  const transfers = transfersArray.length - 1;
+  console.log(transfers);
+
+  return transfers;
+
+
 }
