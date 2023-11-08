@@ -1,0 +1,130 @@
+/* Custom Values */
+:root {
+	--color-background: #878C96;
+	--color-text: #ffffff;
+	--color-button: #ea0116;
+	--color-highlight: #ea0116;
+
+	--font-size-small: 1rem;
+	--font-size-medium: 1.5em;
+	--font-size-large: 3em;
+	--font-size-xxlarge: 4em;
+	--font-size-huge: 7em;
+}
+
+/* Reset defaults */
+body {
+	margin: 0px 0px 0px 0px;
+	background-color: var(--color-background);
+}
+
+/* Fonts */
+
+@font-face {
+	font-family: "Fira Regular";
+	src:
+		url("../fonts/Fira_Sans/FiraSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Fira Bold";
+	src:
+		url("../fonts/Fira_Sans/FiraSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Archivo Black";
+	src:
+		url("../fonts/Archivo_Black/ArchivoBlack-Regular.ttf") format("truetype");
+}
+
+/* Text Fonts */
+p {
+	font-family: "Fira Regular", "Courier New", monospace;
+	font-size: var(--font-size-small);
+	color: var(--color-text);
+	text-align: center;
+}
+
+a {
+	font-family: "Fira";
+}
+
+button {
+	font-family: "Fira Bold", "Courier New", monospace;
+	margin: 10px;
+	color: var(--color-highlight);
+	background-color: var(--color-text);
+	border-color: #000000;
+	padding: 20px;
+	border-radius: 25px;
+	letter-spacing: .05em;
+	width: 200px;
+}
+
+/* Headings */
+
+h1,
+h2 {
+	font-family: "Archivo Black", Times, serif;
+	font-size: var(--font-size-large);
+	text-transform: uppercase;
+	color: var(--color-text);
+}
+
+h2 {
+	font-size: var(--font-size-medium);
+}
+
+/* Text Highlight */
+
+.highlight {
+	color: var(--color-highlight);
+	border-color: solid #000000;
+	background-color: var(--color-text);
+	border-radius: 20px;
+	padding: 10px;
+}
+
+/* Button styling */
+
+.btn-red {
+	background-color: var(--color-highlight);
+	border-color: var(--color-highlight);
+	color: var(--color-text);
+}
+
+.close {
+	display: flex;
+	width: 20px;
+	height: 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+.small {
+	width: 10px;
+	height: 10px;
+}
+
+/* */
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	padding: 45px;
+	align-items: center;
+}
+
+.center {
+	height: 100vh;
+	justify-content: center;
+}
+
+.left p {
+	text-align: left;
+}
+
+/* Icons */
+.icon {
+	width: 160px;
+}
