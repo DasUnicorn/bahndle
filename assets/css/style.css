@@ -39,7 +39,8 @@ body {
 }
 
 /* Text Fonts */
-p {
+p,
+label {
 	font-family: "Fira Regular", "Courier New", monospace;
 	font-size: var(--font-size-small);
 	color: var(--color-text);
@@ -60,6 +61,7 @@ button {
 	border-radius: 25px;
 	letter-spacing: .05em;
 	width: 200px;
+	text-align: center;
 }
 
 /* Headings */
@@ -86,6 +88,23 @@ h2 {
 	padding: 10px;
 }
 
+.strong {
+	font-family: "Archivo Black", Times, serif;
+
+}
+
+/* Input Fields */
+input {
+	width: 100%;
+	padding: 17px;
+	font-family: "Fira Regular", "Courier New", monospace;
+	border-radius: 6px;
+}
+
+label {
+	padding-bottom: 15px;
+}
+
 /* Button styling */
 
 .btn-red {
@@ -107,12 +126,24 @@ h2 {
 	height: 10px;
 }
 
+.guess {
+	border: solid var(--color-highlight);
+	align-self: flex-end;
+	width: 100px;
+	padding: 10px;
+}
+
 /* */
 .flex-col {
 	display: flex;
 	flex-direction: column;
 	padding: 45px;
 	align-items: center;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
 }
 
 .center {
