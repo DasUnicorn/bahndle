@@ -12,11 +12,9 @@
 <body>
 	<section class="flex-col">
 		<h1><span class="highlight">bahn</span>dle</h1>
-		<p>Try to find the train travel destination based on travel time and number of transfers.</p>
 		<p>You start at <span class="strong">Flensburg Hbf.</span> Your travel takes <span class="strong">7h 31min</span> and <span class="strong">1</span> Transfer.</p>
-		<label>Make a guess:</label>
-		<div class="flex-row">
-			<input list="stations" id="station-choice" name="station-choice" />
+		<label>Where do you end? Make a guess:</label>
+			<input list="stations" id="station-choice" name="station-choice" placeholder="Write a train station here..."/>
 			<datalist id="stations">
 				<option value="Baden-Baden"></option>
 				<option value="Bruchsal"></option>
@@ -188,7 +186,6 @@
 				<option value="Weimar"></option>
 			</datalist>
 			<button class=" guess btn-red">Guess</button>
-		</div>
 	</section>
 </body>
 
