@@ -151,6 +151,10 @@ label {
 	justify-content: center;
 }
 
+.end {
+	justify-content: end;
+}
+
 .left p {
 	text-align: left;
 }

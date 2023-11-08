@@ -10,6 +10,10 @@
 </head>
 
 <body>
+	<header class="flex-row end">
+		<a href="info.html"><button class="close"><img src="assets/img/info.png" class="small"></button></a>
+		<a href="index.html"><button class="close"><img src="assets/img/close.png" class="small"></button></a>
+	</header>
 	<section class="flex-col">
 		<h1><span class="highlight">bahn</span>dle</h1>
 		<p>You start at <span class="strong">Flensburg Hbf.</span> Your travel takes <span class="strong">7h 31min</span> and <span class="strong">1</span> Transfer.</p>
@@ -185,7 +189,7 @@
 				<option value="Jena Paradies"></option>
 				<option value="Weimar"></option>
 			</datalist>
-			<button class=" guess btn-red">Guess</button>
+			<button class="guess btn-red" onclick="enterGuess()">Guess</button>
 	</section>
 </body>
 
