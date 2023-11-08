@@ -1,13 +1,13 @@
 // Function by Wilson Lee (see credits)
 function secondsToHms(d) {
     d = Number(d);
-    var h = Math.floor(d / 3600);
-    var m = Math.floor(d % 3600 / 60);
-    var s = Math.floor(d % 3600 % 60);
+    let h = Math.floor(d / 3600);
+    let m = Math.floor(d % 3600 / 60);
+    let s = Math.floor(d % 3600 % 60);
 
-    var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
-    var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
-    var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+    let hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+    let mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
+    let sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
     return hDisplay + mDisplay + sDisplay;
 }
 
@@ -23,8 +23,8 @@ async function fetchData() {
 
         console.log(getEnd(journeyList));
 
-        var tripId = getTripId(journeyList.journeys[0].legs[0]);
-        var LineName = getLineName(journeyList.journeys[0].legs[0]);
+        let tripId = getTripId(journeyList.journeys[0].legs[0]);
+        let LineName = getLineName(journeyList.journeys[0].legs[0]);
         console.log(getStops(tripId, LineName))
 
     } catch (error) {
@@ -41,9 +41,9 @@ function getTravelTime(jsonData) {
         return dt / 1000;
     };
 
-    var endDate = journeyList.journeys[0].legs[transfers].arrival;
-    var startDate = journeyList.journeys[0].legs[0].departure;
-    var travelTime = Math.abs(toTimestamp(endDate) - toTimestamp(startDate));
+    let endDate = journeyList.journeys[0].legs[transfers].arrival;
+    let startDate = journeyList.journeys[0].legs[0].departure;
+    let travelTime = Math.abs(toTimestamp(endDate) - toTimestamp(startDate));
 
     return secondsToHms(travelTime);
 }
@@ -71,7 +71,7 @@ function getStart(jsonData) {
 function getEnd(jsonData) {
     journeyList = jsonData;
 
-    var transfers = getTransfers(jsonData);
+    let transfers = getTransfers(jsonData);
     const endStation = journeyList.journeys[0].legs[transfers].destination.name;
 
     return endStation;
@@ -79,21 +79,21 @@ function getEnd(jsonData) {
 
 // returns the Trip ID of a dataset of train Line 
 function getTripId(jsonDataLine) {
-    line = jsonDataLine;
-    id = line.tripId;
+    let line = jsonDataLine;
+    let id = line.tripId;
     return id;
 }
 
 // returns the lineName of a given dataset
 function getLineName(jsonDataLine) {
-    lineData = jsonDataLine;
-    name = lineData.line.name;
-    cleanName = name.replace(/ /g, '%');
+    const lineData = jsonDataLine;
+    const name = lineData.line.name;
+    let cleanName = name.replace(/ /g, '%');
     return cleanName;
 
 }
 
-// function to get a list of all stopps on a line
+// function to get a list of all stopps on a line with the departure/arrival time of each station
 async function getStops(id, lineName) {
 
     try {
@@ -105,10 +105,10 @@ async function getStops(id, lineName) {
         const trip = await response.json();
         console.log(trip);
 
-        var stopLength = trip.trip.stopovers.length - 1;
-        var stopList = Array(stopLength+1);
+        let stopLength = trip.trip.stopovers.length - 1;
+        let stopList = Array(stopLength+1);
 
-        for (var i = 0; i < stopList.length; i++) {
+        for (let i = 0; i < stopList.length; i++) {
             stopList[i] = new Array(2);
         }
 
