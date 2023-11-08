@@ -1,170 +1,170 @@
-station,id
-Baden-Baden,
-Bruchsal ,
-Donaueschingen,
-Freiburg (Breisgau) Hbf,
-Heidelberg Hbf,
-Karlsruhe Hbf,
-Karlsruhe-Durlach,
-Konstanz,
-Mannheim Hbf,
-Offenburg,
-Plochingen,
-Radolfzell,
-Singen (Hohentw),
-St. Georgen (Schwarzw),
-Stuttgart Hbf,
-Ulm Hbf,
-Vaihingen (Enz),
-Villingen (Schwarzw),
-(Bergstraße) Hbf,
-Wiesloch-Walldorf,
-Aschaffenburg Hbf,
-Augsburg Hbf,
-Bamberg,
-Coburg,
-Donauwörth,
-Erlangen,
-Freilassing,
-Garmisch-Partenkirchen,
-Günzburg,
-Ingolstadt Hbf,
-Lichtenfels,
-Lindau-Reutin,
-Murnau,
-München Hbf,
-München-Pasing,
-München Ost,
-Nürnberg Hbf,
-Passau Hbf,
-Plattling,
-Regensburg Hbf,
-Rosenheim,
-Traunstein,
-Treuchtlingen,
-Tutzing,
-Weilheim (Oberbay),
-Würzburg Hbf,
-Berlin Hbf,
-Berlin Ostbahnhof,
-Berlin Gesundbrunnen,
-Berlin-Spandau,
-Berlin Südkreuz,
-Berlin Ostkreuz,
-Berlin-Wannsee,
-Angermünde,
-Bernau (b Berlin),
-Eberswalde Hbf,
-Prenzlau,
-Bad Hersfeld,
-Bensheim,
-Darmstadt Hbf,
-Frankfurt (Main) Hbf,
-Frankfurt (Main) Süd,
-Frankfurt am Main Flughafen Fernbahnhof,
-Frankfurt (Main) West,
-Friedberg (Hessen),
-Fulda,
-Gießen,
-Hanau Hbf, 
-Kassel-Wilhelmshöhe,
-Limburg Süd,
-Marburg (Lahn),
-Treysa,
-Wabern,
-Wiesbaden Hbf,
-Anklam,
-Bergen auf Rügen,
-Ostseebad Binz,
-Bützow,
-Greifswald,
-Ludwigslust,
-Ribnitz-Damgarten West,
-Rostock Hbf,
-Pasewalk,
-Schwerin Hbf,
-Stralsund Hbf,
-Velgast,
-Züssow,
-Braunschweig Hbf,
-Bremen Hbf,
-Celle,
-Emden Hbf,
-Göttingen,
-Hannover Hbf,
-Hannover Messe/Laatzen,
-Hildesheim Hbf,
-Leer (Ostfriesl),
-Lingen (Ems),
-Lüneburg,
-Marienhafe,
-Meppen,
-Norden,
-Osnabrück Hbf, 
-Papenburg,
-Uelzen,
-Wolfsburg Hbf,
-Aachen 	Aachen Hbf,
-Bielefeld Hbf,
-Bochum Hbf,
-Bonn Hbf,
-Dortmund Hbf,
-Düsseldorf Hbf,
+station,IBNR ID
+Baden-Baden,8000774
+Bruchsal,8000055
+Donaueschingen,8000077
+Freiburg (Breisgau) Hbf,8000107
+Heidelberg Hbf,8000156
+Karlsruhe Hbf,8000191
+Karlsruhe-Durlach,8003184
+Konstanz,8003400
+Mannheim Hbf,8000244
+Offenburg,8000290
+Plochingen,8000302
+Radolfzell,8000880
+Singen (Hohentw),8000073
+St. Georgen (Schwarzw),8005644
+Stuttgart Hbf,8000096
+Ulm Hbf,8000170
+Vaihingen (Enz),8006053
+Villingen (Schwarzw),8000366
+Weinheim (Bergstraße) Hbf,8000377
+Wiesloch-Walldorf,8006421
+Aschaffenburg Hbf,8000010
+Augsburg Hbf,8000013
+Bamberg,8000025
+Coburg,8001338
+Donauwörth,8000078
+Erlangen,8001844
+Freilassing,8000108
+Garmisch-Partenkirchen,8002187
+Günzburg,8000139
+Ingolstadt Hbf,8000183
+Lichtenfels,8000228
+Lindau-Reutin,8003693
+Murnau,8004185
+München Hbf,8000261
+München-Pasing,8004158
+München Ost,8000262
+Nürnberg Hbf,8000284
+Passau Hbf,8000298
+Plattling,8000301
+Regensburg Hbf,8000309
+Rosenheim,8000320
+Traunstein,8000116
+Treuchtlingen,8000122
+Tutzing,8005927
+Weilheim (Oberbay),8000220
+Würzburg Hbf,8000260
+Berlin Hbf,8011160
+Berlin Ostbahnhof,8010255
+Berlin Gesundbrunnen,8011102
+Berlin-Spandau,8010404
+Berlin Südkreuz,8011113
+Berlin Ostkreuz,8011162
+Berlin-Wannsee,8010405
+Angermünde,8010004
+Bernau (b Berlin),8013470
+Eberswalde Hbf,8010093
+Prenzlau,8010282
+Bad Hersfeld,8000020
+Bensheim,8000031
+Darmstadt Hbf,8000068
+Frankfurt (Main) Hbf,8000105
+Frankfurt (Main) Süd,8002041
+Frankfurt am Main Flughafen Fernbahnhof,8070003
+Frankfurt (Main) West,8002042
+Friedberg (Hessen),8000111
+Fulda,8000115
+Gießen,8000124
+Hanau Hbf,8000150
+Kassel-Wilhelmshöhe,8003200
+Limburg Süd,8003680
+Marburg (Lahn),8000337
+Treysa,8000129
+Wabern (Bz Kassel),8000368
+Wiesbaden Hbf,8000250
+Anklam,8011044
+Bergen auf Rügen,8010033
+Ostseebad Binz,8011191
+Bützow,8010066
+Greifswald,8010139
+Ludwigslust,8010216
+Ribnitz-Damgarten West,8012763
+Rostock Hbf,8010304
+Pasewalk,8010268
+Schwerin Hbf,8010324
+Stralsund Hbf,8010338
+Velgast,8010355
+Züssow,8010396
+Braunschweig Hbf,8000049
+Bremen Hbf,8000050
+Celle,8000064
+Emden Hbf,8001768
+Göttingen,8000128
+Hannover Hbf,8000152
+Hannover Messe/Laatzen,8003487
+Hildesheim Hbf,8000169
+Leer (Ostfriesl),8000225
+Lingen (Ems),8003701
+Lüneburg,8000238
+Marienhafe,8003866
+Meppen,8003978
+Norden,8000800
+Osnabrück Hbf, 8000294
+Papenburg (Ems),8004751
+Uelzen,8000168
+Wolfsburg Hbf,8006552
+Aachen Hbf,8000001
+Bielefeld Hbf,8000036
+Bochum Hbf,8000041
+Bonn Hbf,8000044
+Dortmund Hbf,8000080
+Düsseldorf Hbf,8000085
 Düsseldorf Flughafen,
-Duisburg Hbf,
-Essen Hbf,
-Geilenkirchen,
-Gelsenkirchen Hbf,
-Gütersloh Hbf,
-Hamm (Westf),
-Herford,
-Herzogenrath,
-Köln Hbf,
-Köln Messe/Deutz,
-Köln/Bonn Flughafen,
-Krefeld Hbf,
-Minden (Westf),
-Mönchengladbach Hbf,
-Münster (Westf) Hbf,
-Oberhausen Hbf,
-Recklinghausen Hbf,
-Rheine,
-Siegburg/Bonn,
-Solingen Hbf,
-Wanne-Eickel Hbf,
-Wuppertal Hbf,
-Andernach,
-Homburg (Saar) Hbf,
-Kaiserslautern Hbf,
-Koblenz Hbf,
-Mainz Hbf,
-Montabaur,
-Neustadt (Weinstr) Hbf,
-Remagen,
-Saarbrücken Hbf,
-Worms Hbf,
-Bad Schandau,
-Dresden Hbf,
-Dresden-Neustadt,
-Leipzig Hbf,
-Leipzig/Halle Flughafen,
-Riesa,
-Bitterfeld,
-Halle (Saale) Hbf,
-Köthen,
-Lutherstadt Wittenberg Hbf,
-Magdeburg Hbf,
-Naumburg (Saale) Hbf,
-Hamburg Hbf,
-Hamburg-Altona,
-Hamburg Dammtor,
-Hamburg-Harburg,
-Hamburg-Bergedorf,
-Kiel Hbf,
-Lübeck Hbf,
-Neumünster,
-Eisenach,
-Erfurt Hbf,
-Gotha,
-Jena Paradies,
-Weimar,
+Duisburg Hbf,8000082
+Essen Hbf,8000098
+Geilenkirchen,8002206
+Gelsenkirchen Hbf,8000118
+Gütersloh Hbf,8002461
+Hamm (Westf) Hbf,8000149
+Herford,8000162
+Herzogenrath,8002806
+Köln Hbf,8000207
+Köln Messe/Deutz,8003368
+Köln/Bonn Flughafen,8003330
+Krefeld Hbf,8000211
+Minden (Westf),8000252
+Mönchengladbach Hbf,8000253
+Münster (Westf) Hbf,8000263
+Oberhausen Hbf,8000286
+Recklinghausen Hbf,8000307
+Rheine,8000316
+Siegburg/Bonn,8005556
+Solingen Hbf,8000087
+Wanne-Eickel Hbf,8000192
+Wuppertal Hbf,8000266
+Andernach,8000331
+Homburg (Saar) Hbf,8000176
+Kaiserslautern Hbf,8000189
+Koblenz Hbf,8000206
+Mainz Hbf,8000240
+Montabaur,8000667
+Neustadt (Weinstr) Hbf,8000275
+Remagen,8000310
+Saarbrücken Hbf,8000323
+Worms Hbf,8000257
+Bad Schandau,8010022
+Dresden Hbf,8010085
+Dresden-Neustadt,8010089
+Leipzig Hbf,8010205
+Leipzig/Halle Flughafen,8012183
+Riesa,8010297
+Bitterfeld,8010050
+Halle (Saale) Hbf,8010159
+Köthen,8010195
+Lutherstadt Wittenberg Hauptbahnhof,8010222
+Magdeburg Hbf,8010224
+Naumburg (Saale) Hbf,8010240
+Hamburg Hbf,8002549
+Hamburg-Altona,8002553
+Hamburg Dammtor,8002548
+Hamburg-Harburg,8000147
+Hamburg-Bergedorf,8002554
+Kiel Hbf,8000199
+Lübeck Hbf,8000237
+Neumünster,8000271
+Eisenach,8010097
+Erfurt Hbf,8010101
+Gotha,8010136
+Jena Paradies,8011956
+Weimar,8010366
