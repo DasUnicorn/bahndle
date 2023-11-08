@@ -106,7 +106,7 @@ async function getStops(id, lineName) {
         console.log(trip);
 
         let stopLength = trip.trip.stopovers.length - 1;
-        let stopList = Array(stopLength+1);
+        let stopList = Array(stopLength + 1);
 
         for (let i = 0; i < stopList.length; i++) {
             stopList[i] = new Array(2);
@@ -114,7 +114,11 @@ async function getStops(id, lineName) {
 
         for (let step = 0; step <= stopLength; step++) {
             stopList[step][0] = trip.trip.stopovers[step].stop.name;
-            stopList[step][1] = trip.trip.stopovers[step].arrival;
+            if (trip.trip.stopovers[step].departure != null) {
+                stopList[step][1] = trip.trip.stopovers[step].departure;
+            } else {
+                stopList[step][1] = trip.trip.stopovers[step].arrival;
+            }
         }
 
         console.log(stopList);
