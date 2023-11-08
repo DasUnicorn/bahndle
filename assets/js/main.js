@@ -19,13 +19,13 @@ async function fetchData() {
             throw new Error("Network response was not OK");
         }
         const journeyList = await response.json();
+
+        //let tripId = getTripId(journeyList.journeys[0].legs[0]);
+        //let LineName = getLineName(journeyList.journeys[0].legs[0]);
+        //console.log(getStops(tripId, LineName))
         console.log(journeyList);
 
-        console.log(getEnd(journeyList));
-
-        let tripId = getTripId(journeyList.journeys[0].legs[0]);
-        let LineName = getLineName(journeyList.journeys[0].legs[0]);
-        console.log(getStops(tripId, LineName))
+        return journeyList;
 
     } catch (error) {
         console.error("There has been a problem with your fetch operation:", error);
@@ -52,6 +52,10 @@ function getTravelTime(jsonData) {
 function getTransfers(jsonData) {
     journeyList = jsonData;
 
+    console.log("The given data:")
+    console.log(journeyList);
+    console.log("The transfersArray");
+    console.log(journeyList.journeys);
     const transfersArray = journeyList.journeys[0].legs;
     const transfers = transfersArray.length - 1;
 
@@ -69,10 +73,12 @@ function getStart(jsonData) {
 
 // function returning the station where the journey ends
 function getEnd(jsonData) {
-    journeyList = jsonData;
+    const journeyList = jsonData;
 
     let transfers = getTransfers(jsonData);
+    console.log("we have the transfers.");
     const endStation = journeyList.journeys[0].legs[transfers].destination.name;
+    console.log(endStation);
 
     return endStation;
 }
@@ -103,7 +109,6 @@ async function getStops(id, lineName) {
             throw new Error("Network response was not OK");
         }
         const trip = await response.json();
-        console.log(trip);
 
         let stopLength = trip.trip.stopovers.length - 1;
         let stopList = Array(stopLength + 1);
@@ -121,9 +126,51 @@ async function getStops(id, lineName) {
             }
         }
 
-        console.log(stopList);
-
     } catch (error) {
         console.error("There has been a problem with your fetch operation:", error);
     }
+}
+
+// A function that takes the input from the user, checks if it is valid, and displays the result
+function enterGuess() {
+    const input = document.getElementById("station-choice").value
+    console.log(input);
+    result = checkGuess(input);
+}
+
+// returns the solution of the day
+function getSolution(){
+    return fetchData();
+}
+
+function checkGuess(input) {
+    const journey = getSolution();
+    console.log("Solution is here");
+    console.log(journey);
+    const destination = getEnd(journey);
+    console.log("The solution: " + destination);
+    console.log("The input: " + input);
+    if (input = destination) {
+        win();
+    } else {
+        const stop = checkStop(input);
+        if (stop != null) {
+            //It's a stop but no win
+        } else {
+            fail(input);
+        }
+    }
+    console.error("Something went wrong while checking the given input.")
+}
+
+function win() {
+    console.log("YOU WON!");
+}
+
+function fail(input) {
+    console.log("Your guess " + input + " is wrong.")
+}
+
+function checkStop(input){
+    return null;
 }
