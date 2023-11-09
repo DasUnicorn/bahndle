@@ -126,46 +126,59 @@ function getLineName(lineData) {
 
 }
 
-async function setStops(journeyList) {
+function setStops(journeyList) {
     // For each train we took, we need to fetch all stopps and put them into a link
     let allStops = [];
     for (let i = 0; i < transfers + 1; i++) {
+        console.log("train " + i);
+        console.log(transfers);
         // To fetch each train we need the id and line name
         let id = getTripId(journeyList.journeys[0].legs[i]);
         let lineName = getLineName(journeyList.journeys[0].legs[i]);
 
         try {
             let link = "https://v6.db.transport.rest/trips/" + id + "?lineName=" + lineName + "&stopovers=true&remarks=false&polyline=false&language=en";
-            const response = await fetch(link);
-            if (!response.ok) {
-                throw new Error("Network response was not OK");
-            }
-            const trip = await response.json();
 
-            let stopLength = trip.trip.stopovers.length - 1;
-            let stopList = Array(stopLength + 1);
+            fetch(link, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json', //expects JSON
+                    }
+                })
+                .then(response => response.json()) // parses JSON response into a JavaScript object
+                .then(result => {
+                    let stopLength = result.trip.stopovers.length - 1;
+                    let stopList = Array(stopLength + 1);
 
-            for (let i = 0; i < stopList.length; i++) {
-                stopList[i] = new Array(2);
-            }
+                    for (let i = 0; i < stopList.length; i++) {
+                        stopList[i] = new Array(2);
+                    }
 
-            for (let step = 0; step <= stopLength; step++) {
-                stopList[step][0] = trip.trip.stopovers[step].stop.name;
-                if (trip.trip.stopovers[step].departure != null) {
-                    stopList[step][1] = trip.trip.stopovers[step].departure;
-                } else {
-                    stopList[step][1] = trip.trip.stopovers[step].arrival;
-                }
-            }
+                    for (let step = 0; step <= stopLength; step++) {
+                        stopList[step][0] = result.trip.stopovers[step].stop.name;
+                        if (result.trip.stopovers[step].departure != null) {
+                            stopList[step][1] = result.trip.stopovers[step].departure;
+                        } else {
+                            stopList[step][1] = result.trip.stopovers[step].arrival;
+                        }
+                    }
 
-            allStops = allStops.concat(stopList);
+                    allStops = allStops.concat(stopList);
+                    console.log(allStops);
 
+                })
+                .catch(error => {
+                    console.error("Network response was not OK", error);
+                });
         } catch (error) {
             console.error("There has been a problem with your fetch operation:", error);
         }
     }
-
-    return allStops;
+    //const result = await Promise.all(allStops);
+    console.log("end reached");
+    console.log(result);
+    console.log("++++++++++++++++");
+    return result;
 }
 
 // A function that takes the input from the user, checks if it is valid, and displays the result
@@ -202,7 +215,7 @@ function checkForStop(input) {
     console.log("What is length?");
     console.log(length);
 
-    for (let i = 0; i < length-1; i++) {
+    for (let i = 0; i < length - 1; i++) {
         console.log("Current stop to check : " + stops[i][0]);
         if (stops[i][0] == input) {
             return true;
