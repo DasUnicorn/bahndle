@@ -4,6 +4,7 @@
 	--color-text: #ffffff;
 	--color-button: #ea0116;
 	--color-highlight: #ea0116;
+	--color-success: #63A615;
 
 	--font-size-small: 1rem;
 	--font-size-medium: 1.5em;
@@ -166,4 +167,31 @@ label {
 /* Icons */
 .icon {
 	width: 160px;
+}
+
+/* Modal */
+
+dialog h1 {
+	color: var(--color-success);
+}
+
+dialog p {
+	color: #000000;
+}
+
+dialog button {
+	background-color: #000000;
+	color: var(--color-text);
+}
+
+/* Styling Guesses Table */
+body>div {
+	font-family: "Fira Regular", "Courier New", monospace;
+	font-size: var(--font-size-small);
+	text-align: center;
+	background-color: white;
+	padding: 10px;
+	border: 1.5px solid #000000;
+	color: #000000;
+	margin: 0px 25px;
 }

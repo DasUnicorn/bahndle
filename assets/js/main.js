@@ -174,11 +174,13 @@ function makeGuess(input) {
     let result = checkGuess(input);
     console.log("result: " + result);
     if (result == "win") {
-        console.log("You won!");
-        win();
+        addElementWin(input);
+        openModal();
     } else if (result == "stop") {
+        addElementStop(input);
         console.log("Close.You are on the right track.");
     } else if (result == "wrong") {
+        addElementWrong(input);
         console.log("Nope. Wrong guess.");
     } else {
         console.error("There is a problem with the guess.")
@@ -212,8 +214,50 @@ function checkForStop(input) {
     return false;
 }
 
+// 
+function addElementWin(input) {
+    // create a new div element
+    const newDiv = document.createElement("div");
 
-// Pop Up when winning!
-function win() {
-    getElementById("overlay").show();
+    // and give it some content
+    const newContent = document.createTextNode("🟩 " + input);
+
+    // add the text node to the newly created div
+    newDiv.appendChild(newContent);
+
+    // add the newly created element and its content into the DOM
+    const currentDiv = document.getElementById("div1");
+    document.body.insertBefore(newDiv, currentDiv);
+}
+
+// 
+function addElementStop(input) {
+    // create a new div element
+    const newDiv = document.createElement("div");
+
+    // and give it some content
+    const newContent = document.createTextNode("🟨 " + input + );
+
+    // add the text node to the newly created div
+    newDiv.appendChild(newContent);
+
+    // add the newly created element and its content into the DOM
+    const currentDiv = document.getElementById("div1");
+    document.body.insertBefore(newDiv, currentDiv);
+}
+
+// 
+function addElementWrong(input) {
+    // create a new div element
+    const newDiv = document.createElement("div");
+
+    // and give it some content
+    const newContent = document.createTextNode("🟥 " + input);
+
+    // add the text node to the newly created div
+    newDiv.appendChild(newContent);
+
+    // add the newly created element and its content into the DOM
+    const currentDiv = document.getElementById("div1");
+    document.body.insertBefore(newDiv, currentDiv);
 }

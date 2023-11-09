@@ -191,12 +191,28 @@
 		</datalist>
 		<button id="buttonGuess" class="guess btn-red">Guess</button>
 	</section>
+	<dialog id="modal">
+		<h1>You won!</h1>
+		<p>Yes! You found the correct journey! Isn't this great?</p>
+		<button id="closeModal">Try Again</button>
+	</dialog>
 	<script type="text/javascript">
 	let button = document.getElementById("buttonGuess");
 	button.addEventListener("click", () => {
 		let input = document.getElementById("station-choice").value;
 		makeGuess(input);
 	})
+	/* Modal Functions*/
+	const modal = document.getElementById("modal");
+	const closeModal = document.getElementById("closeModal");
+
+	closeModal.addEventListener("click", () => {
+		modal.close();
+	});
+
+	function openModal() {
+		modal.showModal();
+	}
 	</script>
 </body>
 
