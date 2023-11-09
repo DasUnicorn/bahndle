@@ -127,6 +127,7 @@ function getLineName(lineData) {
 async function setStops(journeyList) {
     // For each train we took, we need to fetch all stopps and put them into a link
     let allStops = [];
+    let currentStation = startStation;
     for (let i = 0; i < transfers + 1; i++) {
         // To fetch each train we need the id and line name
         let id = getTripId(journeyList.journeys[0].legs[i]);
@@ -150,12 +151,22 @@ async function setStops(journeyList) {
                 stopList[i] = new Array(2);
             }
 
-            for (let step = 0; step <= stopLength; step++) {
+            let step = 0;
+
+            while (currentStation != result.trip.stopovers[step].stop.name) {
+                step += 1;
+            }
+
+            for (step+1; step <= stopLength; step++) {
                 stopList[step][0] = result.trip.stopovers[step].stop.name;
                 if (result.trip.stopovers[step].departure != null) {
                     stopList[step][1] = result.trip.stopovers[step].departure;
                 } else {
                     stopList[step][1] = result.trip.stopovers[step].arrival;
+                }
+                if (result.trip.stopovers[step].stop.id == journeyList.journeys[0].legs[i].destination.id){
+                    currentStation = journeyList.journeys[0].legs[i].destination.name;
+                    break;
                 }
             }
 
@@ -236,8 +247,8 @@ function addElementStop(input, stop) {
     let cleanTime = secondsToHms(time);
     console.log("Time: " + time);
 
-        // and give it some content
-        const newContent = document.createTextNode("🟨 " + input + " - Time Left: " + cleanTime);
+    // and give it some content
+    const newContent = document.createTextNode("🟨 " + input + " - Time Left: " + cleanTime);
 
     // add the text node to the newly created div
     newDiv.appendChild(newContent);
