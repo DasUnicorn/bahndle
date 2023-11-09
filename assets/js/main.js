@@ -6,6 +6,8 @@ let transfers = 0;
 let startStation = "";
 let endStation = "";
 let stops = [];
+let startDate;
+let endDate;
 
 // Eventlistener that fetches a random train station when the site finished loading and sets up the main infos for the game
 window.addEventListener("load", async () => {
@@ -65,8 +67,7 @@ function secondsToHms(d) {
 }
 
 // Function to calculate the time traveling
-function getTravelTime(jsonData) {
-    journeyList = jsonData;
+function getTravelTime(journeyList) {
 
     const toTimestamp = (strDate) => {
         const dt = new Date(strDate).getTime();
@@ -74,8 +75,9 @@ function getTravelTime(jsonData) {
     };
 
     let transfers = getTransfers(journeyList);
-    let endDate = journeyList.journeys[0].legs[transfers].arrival;
-    let startDate = journeyList.journeys[0].legs[0].departure;
+    endDate = journeyList.journeys[0].legs[transfers].arrival;
+    startDate = journeyList.journeys[0].legs[0].departure;
+    console.log("EndDate: " + endDate + " and startDate: " + startDate);
     let travelTime = Math.abs(toTimestamp(endDate) - toTimestamp(startDate));
 
     return secondsToHms(travelTime);
@@ -171,30 +173,16 @@ async function setStops(journeyList) {
 // A function that takes the input from the user, checks if it is valid, and displays the result
 function makeGuess(input) {
     console.log("input: " + input);
-    let result = checkGuess(input);
-    console.log("result: " + result);
-    if (result == "win") {
-        addElementWin(input);
-        openModal();
-    } else if (result == "stop") {
-        addElementStop(input);
-        console.log("Close.You are on the right track.");
-    } else if (result == "wrong") {
-        addElementWrong(input);
-        console.log("Nope. Wrong guess.");
-    } else {
-        console.error("There is a problem with the guess.")
-    }
+    checkGuess(input);
 }
 
 
 function checkGuess(input) {
     if (input == endStation) {
-        return "win";
-    } else if (checkForStop(input)) {
-        return "stop";
-    } else {
-        return "wrong";
+        addElementWin(input);
+        openModal();
+    } else if (!checkForStop(input)) {
+        addElementWrong(input);
     }
 }
 
@@ -208,6 +196,7 @@ function checkForStop(input) {
     for (let i = 0; i < length - 1; i++) {
         console.log("Current stop to check : " + stops[i][0]);
         if (stops[i][0] == input) {
+            addElementStop(input, stops[i]);
             return true;
         }
     }
@@ -231,12 +220,24 @@ function addElementWin(input) {
 }
 
 // 
-function addElementStop(input) {
+function addElementStop(input, stop) {
+    console.log("stop: ");
+    console.log(stop);
     // create a new div element
     const newDiv = document.createElement("div");
 
-    // and give it some content
-    const newContent = document.createTextNode("🟨 " + input);
+    const toTimestamp = (strDate) => {
+        const dt = new Date(strDate).getTime();
+        return dt / 1000;
+    };
+    let timeStop = stop[1];
+    console.log(timeStop);
+    let time = Math.abs(toTimestamp(endDate) - toTimestamp(timeStop));
+    let cleanTime = secondsToHms(time);
+    console.log("Time: " + time);
+
+        // and give it some content
+        const newContent = document.createTextNode("🟨 " + input + " - Time Left: " + cleanTime);
 
     // add the text node to the newly created div
     newDiv.appendChild(newContent);
