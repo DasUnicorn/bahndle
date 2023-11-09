@@ -26,7 +26,6 @@ window.addEventListener("load", async () => {
         setTransfers(journeyList);
         setEnd(journeyList);
 
-
         const start = document.getElementById("start");
         start.innerHTML = startStation;
 
@@ -40,10 +39,7 @@ window.addEventListener("load", async () => {
         transferNumber.innerHTML = transfers;
 
         // Get a list of all stops
-        stops = setStops(journeyList);
-        console.log("All stops: +++++++++++++++++++++++++++++++++++++++");
-        console.log(stops);
-        console.log("++++++++++++++++++++++++++++++++++++++++++++++++++");
+        stops = await setStops(journeyList);
 
     } catch (error) {
         console.error("There has been a problem with your fetch operation:", error);
@@ -126,12 +122,10 @@ function getLineName(lineData) {
 
 }
 
-function setStops(journeyList) {
+async function setStops(journeyList) {
     // For each train we took, we need to fetch all stopps and put them into a link
     let allStops = [];
     for (let i = 0; i < transfers + 1; i++) {
-        console.log("train " + i);
-        console.log(transfers);
         // To fetch each train we need the id and line name
         let id = getTripId(journeyList.journeys[0].legs[i]);
         let lineName = getLineName(journeyList.journeys[0].legs[i]);
@@ -139,47 +133,40 @@ function setStops(journeyList) {
         try {
             let link = "https://v6.db.transport.rest/trips/" + id + "?lineName=" + lineName + "&stopovers=true&remarks=false&polyline=false&language=en";
 
-            fetch(link, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json', //expects JSON
-                    }
-                })
-                .then(response => response.json()) // parses JSON response into a JavaScript object
-                .then(result => {
-                    let stopLength = result.trip.stopovers.length - 1;
-                    let stopList = Array(stopLength + 1);
+            let response = await fetch(link, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json', //expects JSON
+                }
+            })
 
-                    for (let i = 0; i < stopList.length; i++) {
-                        stopList[i] = new Array(2);
-                    }
+            let result = await response.json();
+            let stopLength = result.trip.stopovers.length - 1;
+            let stopList = Array(stopLength + 1);
 
-                    for (let step = 0; step <= stopLength; step++) {
-                        stopList[step][0] = result.trip.stopovers[step].stop.name;
-                        if (result.trip.stopovers[step].departure != null) {
-                            stopList[step][1] = result.trip.stopovers[step].departure;
-                        } else {
-                            stopList[step][1] = result.trip.stopovers[step].arrival;
-                        }
-                    }
+            for (let i = 0; i < stopList.length; i++) {
+                stopList[i] = new Array(2);
+            }
 
-                    allStops = allStops.concat(stopList);
-                    console.log(allStops);
+            for (let step = 0; step <= stopLength; step++) {
+                stopList[step][0] = result.trip.stopovers[step].stop.name;
+                if (result.trip.stopovers[step].departure != null) {
+                    stopList[step][1] = result.trip.stopovers[step].departure;
+                } else {
+                    stopList[step][1] = result.trip.stopovers[step].arrival;
+                }
+            }
 
-                })
-                .catch(error => {
-                    console.error("Network response was not OK", error);
-                });
+            allStops = allStops.concat(stopList);
+
         } catch (error) {
             console.error("There has been a problem with your fetch operation:", error);
         }
     }
-    //const result = await Promise.all(allStops);
-    console.log("end reached");
-    console.log(result);
-    console.log("++++++++++++++++");
-    return result;
+
+    return allStops;
 }
+
 
 // A function that takes the input from the user, checks if it is valid, and displays the result
 function makeGuess(input) {
@@ -188,6 +175,7 @@ function makeGuess(input) {
     console.log("result: " + result);
     if (result == "win") {
         console.log("You won!");
+        win();
     } else if (result == "stop") {
         console.log("Close.You are on the right track.");
     } else if (result == "wrong") {
@@ -224,14 +212,8 @@ function checkForStop(input) {
     return false;
 }
 
+
+// Pop Up when winning!
 function win() {
-    console.log("YOU WON!");
-}
-
-function fail(input) {
-    console.log("Your guess " + input + " is wrong.")
-}
-
-function checkStop(input) {
-    return null;
+    getElementById("overlay").show();
 }
