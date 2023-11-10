@@ -8,6 +8,7 @@ let endStation = "";
 let stops = [];
 let startDate;
 let endDate;
+let tryNumber = 0;
 
 // Eventlistener that fetches a random train station when the site finished loading and sets up the main infos for the game
 window.addEventListener("load", async () => {
@@ -157,14 +158,14 @@ async function setStops(journeyList) {
                 step += 1;
             }
 
-            for (step+1; step <= stopLength; step++) {
+            for (step + 1; step <= stopLength; step++) {
                 stopList[step][0] = result.trip.stopovers[step].stop.name;
                 if (result.trip.stopovers[step].departure != null) {
                     stopList[step][1] = result.trip.stopovers[step].departure;
                 } else {
                     stopList[step][1] = result.trip.stopovers[step].arrival;
                 }
-                if (result.trip.stopovers[step].stop.id == journeyList.journeys[0].legs[i].destination.id){
+                if (result.trip.stopovers[step].stop.id == journeyList.journeys[0].legs[i].destination.id) {
                     currentStation = journeyList.journeys[0].legs[i].destination.name;
                     break;
                 }
@@ -184,6 +185,7 @@ async function setStops(journeyList) {
 // A function that takes the input from the user, checks if it is valid, and displays the result
 function makeGuess(input) {
     console.log("input: " + input);
+    tryNumber += 1
     checkGuess(input);
 }
 
@@ -201,8 +203,6 @@ function checkForStop(input) {
     console.log("Check for stop: ");
     console.log(stops);
     let length = stops.length;
-    console.log("What is length?");
-    console.log(length);
 
     for (let i = 0; i < length - 1; i++) {
         console.log("Current stop to check : " + stops[i][0]);
@@ -216,6 +216,9 @@ function checkForStop(input) {
 
 // 
 function addElementWin(input) {
+    // Insert the trys needed into html
+    const trys = document.getElementById("trys");
+    trys.innerHTML = tryNumber;
     // create a new div element
     const newDiv = document.createElement("div");
 
