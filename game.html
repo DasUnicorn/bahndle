@@ -4,9 +4,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bahndle, a german train journey guessing game.">
 	<title>Bahndle</title>
 	<link href="assets/css/style.css" rel="stylesheet">
-	<script src="assets/js/main.js"></script>
 </head>
 
 <body>
@@ -197,24 +197,7 @@
 		<p>It took you <span id="trys" class="strong">unknown</span> guesses to solve.</p>
 		<button id="closeModal">Try Again</button>
 	</dialog>
-	<script type="text/javascript">
-	let button = document.getElementById("buttonGuess");
-	button.addEventListener("click", () => {
-		let input = document.getElementById("station-choice").value;
-		makeGuess(input);
-	})
-	/* Modal Functions*/
-	const modal = document.getElementById("modal");
-	const closeModal = document.getElementById("closeModal");
-
-	closeModal.addEventListener("click", () => {
-		modal.close();
-	});
-
-	function openModal() {
-		modal.showModal();
-	}
-	</script>
 </body>
+<script src="assets/js/main.js"></script>
 
 </html>

@@ -54,6 +54,24 @@ function randomStationID() {
     return stations[position];
 }
 
+/* Execute guess function when guess button is pressed*/
+let button = document.getElementById("buttonGuess");
+button.addEventListener("click", () => {
+    let input = document.getElementById("station-choice").value;
+    makeGuess(input);
+})
+/* Modal Functions*/
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+
+closeModal.addEventListener("click", () => {
+    modal.close();
+});
+
+function openModal() {
+    modal.showModal();
+}
+
 // Function by Wilson Lee (see credits)
 function secondsToHms(d) {
     d = Number(d);
