@@ -68,7 +68,7 @@ a {
 	font-family: "Fira";
 }
 
-button {
+.button {
 	font-family: "Fira Bold", "Courier New", monospace;
 	margin: 10px;
 	color: var(--color-highlight);
@@ -79,6 +79,8 @@ button {
 	letter-spacing: .05em;
 	width: 200px;
 	text-align: center;
+	text-decoration: none; /*fallback for iOS*/
+	text-decoration: transparent;
 }
 
 /* Headings */
