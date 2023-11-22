@@ -269,7 +269,7 @@ function makeGuess(input) {
 }
 ```
 
-The function checks the input with the given regex expression and alerts the user, when the input is invalid.
+The function checks the input with the given regex expression and alerts the user when the input is invalid.
 
 ```js
 /**
@@ -286,8 +286,17 @@ function validateInput(input) {
 }
 ```
 
+#### Wrong option when entering input
+When selecting the option "Lingen (Ems)", the result fails, even though it's the correct answer.
 
+![Option failed](/assets/img/readme/bug2-option.png)
 
+##### Solution:
+This issue happens, due to a different spelling in the data returned and can be easily fixed by removing the blank space in the option in game.html.
+
+```css
+<option value="Lingen(Ems)"></option>
+```
 
 ## Deployment
 
