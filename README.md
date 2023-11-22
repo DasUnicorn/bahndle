@@ -242,9 +242,51 @@ When getting the id and name there needs to be a check if the value is undefined
 When this is the case, the request for stops should not be sent. Instead, only the current Station, the person is walking to need to be added.
 
 ##### Why this isn't fixed yet
-Sadly, this issue isn't fixed easily. While checking for undefined or empty values can be easily done, the current system is designed around loops that match the amount of transfers. To exit these loops it's necessary that the names of stations match precisely, which isn't always the case (as seen above). If not, some loops might run forever and break the program. So in the long run this should be fixed by compiling IDs. This would need a complete restructure of the code and isn't possible in the given time.
+Sadly, this issue isn't fixed easily. While checking for undefined or empty values can be easily done, the current system is designed around loops that match the amount of transfers. To exit these loops it's necessary that the names of stations match precisely, which isn't always the case (as seen above). If not, some loops might run forever and break the program. So in the long run this should be fixed by compairing IDs. This would need a complete restructure of the code and isn't possible in the given time.
 
 ### Fixed Bugs
+
+#### Empty User Input
+Wrong input from the user, like empty input, or non strings like numbers should be handled by the application. Currently, when entering an invalid or empty input, it gets displayed inside the guesses as a wrong guess.
+
+![Wrong input is displayed](/assets/img/readme/bug1-input.png)
+
+##### Solution:
+The input needs to be handled and validatet. To validate the input, I wrote a JS function called "validateInput(input)" that is called when pressing the button "guess".
+
+```js
+/**
+ * function that takes the input, checks if it is valid, and displays the result
+ * @param {string} input - a valid ICE train station.
+ */
+function makeGuess(input) {
+    if (validateInput(input)) {
+        tryNumber += 1;
+        checkGuess(input);
+    } else {
+         alert('No valid guess entered. Please only use letters and round brackets.');
+    }
+}
+```
+
+The function checks the input with the given regex expression and alerts the user, when the input is invalid.
+
+```js
+/**
+ * function that checks if the input only uses letters and round brackets
+ * @param {string} input - a valid ICE train station.
+ */
+function validateInput(input) {
+    let invalidInput = /[^a-zA-Z()\säüöß]/g;
+    if (input == "" || input.match(invalidInput)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+```
+
+
 
 
 ## Deployment
