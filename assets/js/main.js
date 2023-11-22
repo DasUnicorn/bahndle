@@ -11,7 +11,7 @@ let startDate;
 let endDate;
 let tryNumber = 0;
 
-// Eventlistener that fetches a random train station when the site finished loading and sets up the main infos for the game
+/* Eventlistener that fetches a random train station when the site finished loading and sets up the main infos for the game*/
 window.addEventListener("load", async () => {
     const from = randomStationID();
     const to = randomStationID();
@@ -65,6 +65,7 @@ button.addEventListener("click", () => {
 const modal = document.getElementById("modal");
 const closeModal = document.getElementById("closeModal");
 
+/* Close modal on button click*/
 closeModal.addEventListener("click", () => {
     modal.close();
 });
@@ -267,7 +268,10 @@ function checkForStop(input) {
     return false;
 }
 
-// 
+/**
+ * function that takes the input and  displays the guess as a win, as well as open a modal.
+ * @param {string} input - a valid ICE train station.
+ */
 function addElementWin(input) {
     // Insert the trys needed into html
     const trys = document.getElementById("trys");
@@ -286,7 +290,10 @@ function addElementWin(input) {
     document.body.insertBefore(newDiv, currentDiv);
 }
 
-// 
+/**
+ * Function that takes the input and  displays the guess as a stop with the time needed to reach the destination.
+ * @param {string} input - a valid ICE train station.
+ */ 
 function addElementStop(input, stop) {
     // create a new div element
     const newDiv = document.createElement("div");
@@ -310,7 +317,10 @@ function addElementStop(input, stop) {
     document.body.insertBefore(newDiv, currentDiv);
 }
 
-// 
+/**
+ * Function that takes the input and  displays the guess as a win.
+ * @param {string} input - a valid ICE train station.
+ */ 
 function addElementWrong(input) {
     // create a new div element
     const newDiv = document.createElement("div");
