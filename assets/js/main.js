@@ -1,6 +1,7 @@
 // All possible ICE station IDs
 const stations = [8000774, 8000055, 8000077, 8000107, 8000156, 8000191, 8003184, 8003400, 8000244, 8000290, 8000302, 8000880, 8000073, 8005644, 8000096, 8000170, 8006053, 8000366, 8000377, 8006421, 8000010, 8000013, 8000025, 8001338, 8000078, 8001844, 8000108, 8002187, 8000139, 8000183, 8000228, 8003693, 8004185, 8000261, 8004158, 8000262, 8000284, 8000298, 8000301, 8000309, 8000320, 8000116, 8000122, 8005927, 8000220, 8000260, 8011160, 8010255, 8011102, 8010404, 8011113, 8011162, 8010405, 8010004, 8013470, 8010093, 8010282, 8000020, 8000031, 8000068, 8000105, 8002041, 8070003, 8002042, 8000111, 8000115, 8000124, 8000150, 8003200, 8003680, 8000337, 8000129, 8000368, 8000250, 8011044, 8010033, 8011191, 8010066, 8010139, 8010216, 8012763, 8010304, 8010268, 8010324, 8010338, 8010355, 8010396, 8000049, 8000050, 8000064, 8001768, 8000128, 8000152, 8003487, 8000169, 8000225, 8003701, 8000238, 8003866, 8003978, 8000800, 8000294, 8004751, 8000168, 8006552, 8000001, 8000036, 8000041, 8000044, 8000080, 8000085, 8000082, 8000098, 8002206, 8000118, 8002461, 8000149, 8000162, 8002806, 8000207, 8003368, 8003330, 8000211, 8000252, 8000253, 8000263, 8000286, 8000307, 8000316, 8005556, 8000087, 8000192, 8000266, 8000331, 8000176, 8000189, 8000206, 8000240, 8000667, 8000275, 8000310, 8000323, 8000257, 8010022, 8010085, 8010089, 8010205, 8012183, 8010297, 8010050, 8010159, 8010195, 8010222, 8010224, 8010240, 8002549, 8002553, 8002548, 8000147, 8002554, 8000199, 8000237, 8000271, 8010097, 8010101, 8010136, 8011956, 8010366]
 
+// Global Variables:
 let journeyList;
 let transfers = 0;
 let startStation = "";
@@ -24,7 +25,7 @@ window.addEventListener("load", async () => {
         journeyList = await response.json();
         console.log(journeyList);
 
-        //Set up tha main Info with the loaded journey
+        //Set up the main info with the loaded journey
         setStart(journeyList);
         setTransfers(journeyList);
         setEnd(journeyList);
@@ -49,6 +50,7 @@ window.addEventListener("load", async () => {
     }
 });
 
+/* Returns a random station */
 function randomStationID() {
     let position = Math.floor(Math.random() * stations.length - 1);
     return stations[position];
@@ -60,7 +62,7 @@ button.addEventListener("click", () => {
     let input = document.getElementById("station-choice").value;
     makeGuess(input);
 })
-/* Modal Functions*/
+/* Functions to close the Modal*/
 const modal = document.getElementById("modal");
 const closeModal = document.getElementById("closeModal");
 
@@ -68,11 +70,12 @@ closeModal.addEventListener("click", () => {
     modal.close();
 });
 
+/* function to display the modal */
 function openModal() {
     modal.showModal();
 }
 
-// Function by Wilson Lee (see credits)
+/* Function by Wilson Lee (see credits), to turn a date into h, min, sec. */
 function secondsToHms(d) {
     d = Number(d);
     let h = Math.floor(d / 3600);
@@ -85,7 +88,10 @@ function secondsToHms(d) {
     return hDisplay + mDisplay + sDisplay;
 }
 
-// Function to calculate the time traveling
+/**
+ * Function to calculate the time traveling
+ * @param {JSON} journeyList - A JSON containing the journey.
+ */
 function getTravelTime(journeyList) {
 
     const toTimestamp = (strDate) => {
@@ -102,40 +108,58 @@ function getTravelTime(journeyList) {
     return secondsToHms(travelTime);
 }
 
+/**
+ * Function to calculate the amount of transfers a given journey
+ * @param {JSON} journeyList - A JSON containing the journey.
+ */
 function setTransfers(journeyList) {
     const transfersArray = journeyList.journeys[0].legs;
     transfers = transfersArray.length - 1;
 }
 
-// Function to get the numbers of transfers in one journey
+/* Function to get the numbers of transfers in one journey */
 function getTransfers() {
     return transfers;
 }
 
+/**
+ * Function to set the start of a given journey.
+ * @param {JSON} journeyList - A JASON containing the journey.
+ */
 function setStart(journeyList) {
     startStation = journeyList.journeys[0].legs[0].origin.name;
 }
 
-//function to get the start location
+/* Function to get the start location. */
 function getStart() {
     return startStation;
 }
 
+/**
+ * Function to set the end of a given journey.
+ * @param {JSON} journeyList - A JASON containing the journey.
+ */
 function setEnd(journeyList) {
     endStation = journeyList.journeys[0].legs[transfers].destination.name;
 }
 
-// function returning the station where the journey ends
+/* function returning the station where the journey ends */
 function getEnd() {
     return endStation;
 }
 
-// returns the Trip ID of a dataset of train Line 
+/**
+ * Function to return the Trip ID of a given train Line.
+ * @param {JSON} journeyList - A JASON containing the train Line.
+ */
 function getTripId(line) {
     return line.tripId;
 }
 
-// returns the lineName of a given dataset
+/**
+ * Function to return the lineName of a given dataset.
+ * @param {JSON} journeyList - A JASON containing the train Line.
+ */
 function getLineName(lineData) {
     const name = lineData.line.name;
     let cleanName = name.replace(/ /g, '%');
@@ -143,6 +167,10 @@ function getLineName(lineData) {
 
 }
 
+/**
+ * Function to set the stops on a given journey.
+ * @param {JSON} journeyList - A JASON containing the journey.
+ */
 async function setStops(journeyList) {
     // For each train we took, we need to fetch all stopps and put them into a link
     let allStops = [];
@@ -200,14 +228,20 @@ async function setStops(journeyList) {
 }
 
 
-// A function that takes the input from the user, checks if it is valid, and displays the result
+/**
+ * function that takes the input, checks if it is valid, and displays the result
+ * @param {string} input - a valid ICE train station.
+ */
 function makeGuess(input) {
     console.log("input: " + input);
     tryNumber += 1
     checkGuess(input);
 }
 
-
+/**
+ * function that takes the input, checks if it is valid, and open a modal in case the user won.
+ * @param {string} input - a valid ICE train station.
+ */
 function checkGuess(input) {
     if (input == endStation) {
         addElementWin(input);
@@ -217,6 +251,10 @@ function checkGuess(input) {
     }
 }
 
+/**
+ * function that takes the input and  checks if it is stopp on the journey
+ * @param {string} input - a valid ICE train station.
+ */
 function checkForStop(input) {
     console.log("Check for stop: ");
     console.log(stops);
