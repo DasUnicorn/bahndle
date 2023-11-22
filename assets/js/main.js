@@ -223,8 +223,25 @@ async function setStops(journeyList) {
  * @param {string} input - a valid ICE train station.
  */
 function makeGuess(input) {
-    tryNumber += 1;
-    checkGuess(input);
+    if (validateInput(input)) {
+        tryNumber += 1;
+        checkGuess(input);
+    } else {
+         alert('No valid guess entered. Please only use letters and round brackets.');
+    }
+}
+
+/**
+ * function that checks if the input only uses letters and round brackets
+ * @param {string} input - a valid ICE train station.
+ */
+function validateInput(input) {
+    let invalidInput = /[^a-zA-Z()\säüöß]/g;
+    if (input == "" || input.match(invalidInput)) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 /**
@@ -284,7 +301,7 @@ function addElementWin(input) {
 /**
  * Function that takes the input and  displays the guess as a stop with the time needed to reach the destination.
  * @param {string} input - a valid ICE train station.
- */ 
+ */
 function addElementStop(input, stop) {
     // create a new div element
     const newDiv = document.createElement("div");
@@ -311,7 +328,7 @@ function addElementStop(input, stop) {
 /**
  * Function that takes the input and  displays the guess as a win.
  * @param {string} input - a valid ICE train station.
- */ 
+ */
 function addElementWrong(input) {
     // create a new div element
     const newDiv = document.createElement("div");
