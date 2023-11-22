@@ -155,7 +155,7 @@ All guesses are systematically presented in chronological order at the bottom of
 ![Try Area](/assets/img/readme/guess-area.png)
 
 #### Win and Trys
-Upon entering the correct guess, a pop-up notification informs the user about their victory, displaying the crucial information on the number of guesses required to win the game. The pop-up also includes a button at the bottom, allowing users to easily initiate a new game and try again.
+Upon entering the correct guess, a pop-up notification informs the user about their victory, displaying the crucial information on the number of guesses required to win the game. The pop-up also includes a button at the bottom, allowing users to easily close the pop up window.
 ![Pop Up Win](/assets/img/readme/win.png)
 
 ### Features Left to Implement
