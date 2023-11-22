@@ -184,7 +184,22 @@ The CSS code was validated using W3C Jigsaw CSS Validator.
 ![css Test Result](/assets/img/readme/css-test.png)
 
 #### W3C Validator
-Every page of the website was validated using the W3C tool.
+Every page of the website was validated using the W3C tool. No errors (only one warning) appeared.
+
+![HTML Test Result index](/assets/img/readme/html-check-index.png)
+![HTML Test Result game](/assets/img/readme/html-check-game.png)
+![HTML Test Result info](/assets/img/readme/html-check-info.png)
+
+#### Accessibility
+The result of the WAVE Web Accessibility Evaluation Tool shows 0 Errors.
+
+![Wave Test Result index](/assets/img/readme/wave-index.png)
+![Wave Test Result game](/assets/img/readme/wave-game.png)
+![Wave Test Result info](/assets/img/readme/wave-info.png)
+
+#### JS Hint
+The result of the JSHint Tool shows 0 Errors.
+![JS Test Result](/assets/img/readme/js-hint.png)
 
 ### Manual Testing
 
@@ -228,6 +243,9 @@ When this is the case, the request for stops should not be sent. Instead, only t
 
 ##### Why this isn't fixed yet
 Sadly, this issue isn't fixed easily. While checking for undefined or empty values can be easily done, the current system is designed around loops that match the amount of transfers. To exit these loops it's necessary that the names of stations match precisely, which isn't always the case (as seen above). If not, some loops might run forever and break the program. So in the long run this should be fixed by compiling IDs. This would need a complete restructure of the code and isn't possible in the given time.
+
+### Fixed Bugs
+
 
 ## Deployment
 
