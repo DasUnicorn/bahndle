@@ -7,6 +7,8 @@ Check out the [live-site](https://dasunicorn.github.io/bahndle/index.html).
 
 ![Mock up](/assets/img/readme/mockup.png)
 
+--- 
+
 # Content
 
 <!-- toc -->
@@ -48,6 +50,8 @@ Check out the [live-site](https://dasunicorn.github.io/bahndle/index.html).
 
 <!-- tocstop -->
 
+---
+
 ## Technologies Used
 
 * GitHub – storage and deployment
@@ -61,8 +65,39 @@ HTML, CSS, Java Script
 
 Github
 
+## User Experience
+
+### Target Audience
+The intended audience for this game is a specialized group, specifically tailored for enthusiasts within the German Train Nerd Community who possess a deep understanding of the German train network and ICE stations nationwide. The game can pose significant challenges when played by individuals who do not meet these criteria. Looking ahead, there is potential to broaden the target audience by incorporating tips or additional information about train journeys. Furthermore, the option to introduce varying difficulty levels could be explored in future developments.
+
+### User stories
+
+#### As a new player, I want clear instructions on how to play the game so that I can quickly understand the rules.
+In order to maintain a clean game display, the instructions on how to play are presented separately and in-depth on an additionel site. This approach ensures a user-friendly introduction to the game, providing clear guidance for an effortless and smooth start.
+
+#### As a player making my first guess, I want the input field to provide autocomplete options to help me spell and choose valid ICE train stations accurately.
+When entering an input, options that match the input are displayed.
+
+#### As a player, I want immediate feedback after each guess to guide me in refining my strategy.
+The user is presented with color-coded results (green for correct, yellow for on the way, and red for off-course) as a guide.
+
+#### As a player, I want to see a list of all my guesses to visually track my progress and review my attempts.
+For convenient review of attempts, users have a chronological list displayed at the bottom of the screen, showcasing all the entered results.
+
 ## Design
-My design takes inspiration from the authentic [color palette](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Farbe) and [typography](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Typografie) of Deutsche Bahn. In consideration of copyright, I aim to capture a similar aesthetic without directly replicating the design or using identical fonts. The overall game, particularly the initial page, draws inspiration from the concept of [Wordle](https://www.nytimes.com/games/wordle/index.html).
+My design takes inspiration from the [color palette](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Farbe) and [typography](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Typografie) of Deutsche Bahn. In consideration of copyright, I aim to capture a similar aesthetic without directly replicating the design or using identical fonts. The overall game, particularly the initial page, draws inspiration from the concept of [Wordle](https://www.nytimes.com/games/wordle/index.html).
+
+![Color Palette](/assets/img/readme/color.png)
+
+### Wireframes
+
+All Wireframes are made with Figma.
+
+#### Mobile
+![Wireframes Mobile](/assets/img/readme/wf-mobile.png)
+
+#### Desktop
+![Wireframes Desktop](/assets/img/readme/wf-desktop.png)
 
 ## Features 
 
@@ -106,6 +141,20 @@ Upon entering the correct guess, a pop-up notification informs the user about th
 
 #### Turning it into a daily guessing game
 
+### Accessibility
+
+#### Fonts and Font Sizes
+
+I tried to choose fonts that are easy to read. The font sizes are coded in em and rem, to make them easily adjustable by the user themselves.
+
+#### Colors
+
+All colours and colour-text-combinations are tested for contrast and visibility. They went through a change due to accessibility concerns after the design phase.
+
+#### Structural HTML
+
+The structure of html makes the website possible to navigate by keyboard. When pressing the tab key, all interactive content can be reached.
+
 ## Testing
 
 Full testing was performed on the following devices:
@@ -129,6 +178,13 @@ All sites pass the lighthouse test without Problems.
 ![Lighthouse Test Result Index](/assets/img/readme/lh-index.png)
 ![Lighthouse Test Result Info](/assets/img/readme/lh-info.png)
 ![Lighthouse Test Result Game](/assets/img/readme/lh-game.png)
+
+#### Jigsaw CSS Validator
+The CSS code was validated using W3C Jigsaw CSS Validator.
+![css Test Result](/assets/img/readme/css-test.png)
+
+#### W3C Validator
+Every page of the website was validated using the W3C tool.
 
 ### Manual Testing
 
