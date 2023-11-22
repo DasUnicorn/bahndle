@@ -5,6 +5,47 @@ The project is developed using HTML, CSS, and Vanilla JavaScript to deliver a fu
 
 ![Mock up](/assets/img/readme/mockup.png)
 
+# Content
+
+<!-- toc -->
+
+- [Technologies Used](#technologies-used)
+  * [Languages Used](#languages-used)
+  * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+- [Design](#design)
+- [Features](#features)
+  * [Existing Features](#existing-features)
+    + [Logo](#logo)
+    + [Start Page](#start-page)
+    + [Information Page](#information-page)
+    + [Game Area](#game-area)
+    + [Making a guess](#making-a-guess)
+    + [Try Area](#try-area)
+    + [Win and Trys](#win-and-trys)
+  * [Features Left to Implement](#features-left-to-implement)
+    + [Display the journey after win](#display-the-journey-after-win)
+    + [Turning it into a daily guessing game](#turning-it-into-a-daily-guessing-game)
+- [Testing](#testing)
+  * [Validator Testing](#validator-testing)
+    + [Lighthouse Test](#lighthouse-test)
+  * [Manual Testing](#manual-testing)
+  * [Testing as Tutor / Grading Person](#testing-as-tutor--grading-person)
+  * [Unfixed Bugs](#unfixed-bugs)
+    + [Loosing the progress when checking the "How to play"-Site](#loosing-the-progress-when-checking-the-how-to-play-site)
+    + [Spaces and Special Characters in Guesses](#spaces-and-special-characters-in-guesses)
+    + [Edgecases in Station Names](#edgecases-in-station-names)
+    + [Error: "Line.data.line is undefined"](#error-linedataline-is-undefined)
+      - [The problem](#the-problem)
+      - [How to fix this issue](#how-to-fix-this-issue)
+      - [Why this isn't fixed yet](#why-this-isnt-fixed-yet)
+- [Deployment](#deployment)
+  * [Local Development](#local-development)
+    + [How to Clone](#how-to-clone)
+    + [How to Fork](#how-to-fork)
+- [Credits](#credits)
+
+<!-- tocstop -->
+
 ## Technologies Used
 
 * GitHub – storage and deployment
