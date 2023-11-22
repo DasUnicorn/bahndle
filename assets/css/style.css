@@ -13,7 +13,8 @@
 	--font-size-huge: 7em;
 }
 
-/* Reset defaults */
+/* Set defaults */
+
 body {
 	margin: 0px 0px 0px 0px;
 	background-color: var(--color-background);
@@ -30,7 +31,6 @@ header {
 section {
 	max-width: 750px;
 }
-
 
 /* Fonts */
 
@@ -118,6 +118,7 @@ h2 {
 }
 
 /* Input Fields */
+
 input {
 	width: 100%;
 	padding: 17px;
@@ -137,10 +138,18 @@ label {
 	color: var(--color-text);
 }
 
+.btn-black {
+	background-color: var(--color-highlight);
+	border: solid var(--color-highlight);
+	color: var(--color-text);
+
+}
+
 .close {
 	display: flex;
 	width: 20px;
 	height: 20px;
+	padding: 10px;
 	align-items: center;
 	justify-content: center;
 }
@@ -157,7 +166,7 @@ label {
 	padding: 10px;
 }
 
-/* */
+/* Flex elements */
 .flex-col {
 	display: flex;
 	flex-direction: column;
@@ -203,7 +212,7 @@ dialog button {
 	color: var(--color-text);
 }
 
-/* Styling Guesses Table */
+/* Styling Guess Table */
 body>div {
 	font-family: "Fira Regular", "Courier New", monospace;
 	font-size: var(--font-size-small);
