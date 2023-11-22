@@ -15,18 +15,26 @@ My design is isnpired by the actual [color scheme](https://marketingportal.extra
 ### Existing Features
 
 #### Logo
+![Try Area](/assets/img/readme/logo.png)
 
 #### Start Page
+![Startpage](/assets/img/readme/index.png)
 
 #### Help Page
+![Infopage](/assets/img/readme/info.png)
 
 #### Game Area
+![Gamepage](/assets/img/readme/game.png)
 
 #### Making a guess
+![Autocomplete](/assets/img/readme/autocomplete.png)
+![Guessing](/assets/img/readme/guess.png)
 
 #### Try Area
+![Try Area](/assets/img/readme/guess-area.png)
 
 #### Win and Trys
+![Pop Up Win](/assets/img/readme/win.png)
 
 
 ### Features Left to Implement
