@@ -160,9 +160,14 @@ Upon entering the correct guess, a pop-up notification informs the user about th
 
 ### Features Left to Implement
 
-#### Display the journey after win
+#### Display the journey after winning
+Upon winning the game, it would be a great feature to display the actual train journey the player has sought. Whether the solution was stumbled upon by luck or achieved through considerable effort, presenting the correct solution with all the trains and transfers could provide clarity and a sense of accomplishment for the player.
+
+#### Optimize the input
+Optimizing the input experience could involve allowing users to make a guess by pressing enter. Additionally,clearing the input after a guess was made, to make the input ready for a new guess, would enhance user convenience.
 
 #### Turning it into a daily guessing game
+Implementing a daily challenge, akin to Wordle and other games, would enable users to compare their results and engage in friendly competition. Transforming the game into a daily challenge, where each player tackles the same quest, not only fosters community interaction but also addresses potential API request issues during peak game times. Achieving this involves building the game server-side and updating it on a daily basis for a synchronized and optimized user experience. 
 
 ### Accessibility
 
@@ -281,11 +286,12 @@ In these cases, a step has one unique ID, but multiple names. Instead of handlin
 #### Error: "Line.data.line is undefined"
 Sometimes, when loading the site the error "Line. data. line is undefined" can be seen in the console.
 When this happens, it's not possible to guess any stops on the way and any guesses unless the correct answer is turning red.
-[pictures of the error message]
+![Line.data.line error](/assets/img/readme/error.png)
 
 ##### The problem
 When building this project, I assumed that all 'legs' (the way from a to b) of the request return a specific train, since this is a train journey. But as it turns out: when changing from a regional to a long distance train it can be necessary to change the part of the train station. From Berlin Hbf to Berlin Hbf (tief). Sometimes the tracks are outside or separate from train stations, for Example "Hamburg Hbf" and "Hamburg Hbf (S-Bahn)".
 In these edge cases, the journey between the two stops in question is taken by foot and there is no line name and id available. The request throws an error and the array is never filled with the stops and stays empty.
+![Special case in JSON Data](/assets/img/readme/walk.png)
 
 ##### How to fix this issue
 When getting the id and name there needs to be a check if the value is undefined or empty.
