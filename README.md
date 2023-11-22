@@ -5,7 +5,6 @@ The project is developed using HTML, CSS, and Vanilla JavaScript to deliver a fu
 
 ![Mock up](/assets/img/readme/mockup.png)
 
-
 ## Technologies Used
 
 * GitHub – storage and deployment
@@ -34,22 +33,29 @@ The logo incorporates a creative play with fonts, where the word "Bahn" is artis
 The landing page design draws inspiration from the layout of the [Wordle](https://www.nytimes.com/games/wordle/index.html) landing page. It features a "Play" button, directing users to the game, and a "How to Play" button, providing information on the game's rules and instructions.
 ![Startpage](/assets/img/readme/index.png)
 
-#### Help Page
+#### Information Page
+To ensure players have a comprehensive understanding of the game, an information page is available. This page serves as a guide, walking users through the game's dynamics and providing detailed information on how it operates. Each response from the game is thoroughly explained, offering insights into the solving process.
+
 ![Infopage](/assets/img/readme/info.png)
 
 #### Game Area
+At the core of this project lies the game, which encompasses the logo, informative content, and an input field for making guesses. The bottom of the page displays a record of previous guesses, providing a comprehensive overview of the gaming session. Users can conveniently close the game or navigate to the information page through dedicated buttons at the top right.
 ![Gamepage](/assets/img/readme/game.png)
 
 #### Making a guess
+To enhance the guessing experience, the input field features autocomplete options. This functionality serves a dual purpose by assisting users in correctly spelling their guesses, crucial for the game, and offering a comprehensive overview of all available options.
 ![Autocomplete](/assets/img/readme/autocomplete.png)
+Upon entering a guess, the game provides feedback to gauge the accuracy of the user's input. The guess is marked red if it is outside the scope of the journey, yellow if the station is along the route but not the sought-after destination, and green to signify a correct guess and victory.
+Additionally, when the user inputs a stop that lies along the route, the application dynamically includes information on the remaining time needed to reach the destination being sought.
 ![Guessing](/assets/img/readme/guess.png)
 
 #### Try Area
+All guesses are systematically presented in chronological order at the bottom of the screen. This layout provides users with a visual guide as they navigate through the game, and the list expands with each subsequent guess.
 ![Try Area](/assets/img/readme/guess-area.png)
 
 #### Win and Trys
+Upon entering the correct guess, a pop-up notification informs the user about their victory, displaying the crucial information on the number of guesses required to win the game. The pop-up also includes a button at the bottom, allowing users to easily initiate a new game and try again.
 ![Pop Up Win](/assets/img/readme/win.png)
-
 
 ### Features Left to Implement
 
