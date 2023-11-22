@@ -233,7 +233,7 @@ function makeGuess(input) {
  * @param {string} input - a valid ICE train station.
  */
 function validateInput(input) {
-    let invalidInput = /[^a-zA-Z()\säüöß]/g;
+    let invalidInput = /[^a-zA-Z()\säüöß-]/g;
     if (input == "" || input.match(invalidInput)) {
         return false;
     } else {
