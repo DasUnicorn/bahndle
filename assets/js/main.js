@@ -32,9 +32,6 @@ window.addEventListener("load", async () => {
         const start = document.getElementById("start");
         start.innerHTML = startStation;
 
-        console.log("start: " + startStation);
-        console.log("end: " + endStation);
-
         const time = document.getElementById("time");
         time.innerHTML = getTravelTime(journeyList);
 
@@ -262,12 +259,9 @@ function checkGuess(input) {
  * @param {string} input - a valid ICE train station.
  */
 function checkForStop(input) {
-    console.log("Check for stop: ");
-    console.log(stops);
     let length = stops.length;
 
     for (let i = 0; i < length - 1; i++) {
-        console.log("Current stop to check : " + stops[i][0]);
         if (stops[i][0] == input) {
             addElementStop(input, stops[i]);
             return true;

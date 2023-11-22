@@ -218,8 +218,21 @@ The result of the JSHint Tool shows 0 Errors.
 | Stops are shown with a yellow mark and the time left              | game.html  | When entering a station that's a stop on the journey, the guess should be displayed with a yellow indicator as well as the time left to the correct destination. | Entering a stop.                                       | A new guess appears on the screen with a yellow rectangle and the time left.           | Pass      |
 
 
-### Testing as Tutor / Grading Person
+### Testing this project without train knowledge
 
+If you're eager to try the game but have limited knowledge of the German train system, I've got some helpful tips for you.
+
+1. Check if the console shows the js error mention below in the section "bugs". In this case reload the site to get a new game.
+2. The Result is stored in the global variable "endStation" and can be returned with a console.log. I suggest to do this in Line 31 in main.js
+```js
+        console.log("start: " + startStation);
+        console.log("end: " + endStation);
+```
+3. All stops are stored in "stops". I suggest the following console.log in Line 256. When doing this you have to enter one wrong guess and see all the stops in the console.
+```js
+console.log("Current stop to check : " + stops[i][0]);
+```
+I hope you still have fun with this project, even though you are not the target audience.
 
 ### Unfixed Bugs
 
