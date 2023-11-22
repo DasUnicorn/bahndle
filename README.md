@@ -96,16 +96,14 @@ All sites pass the lighthouse test without Problems.
 ### Unfixed Bugs
 
 #### Loosing the progress when checking the "How to play"-Site
-Since the information on how to play is on a seperate site, the progress of the game gets lost when checking it out mid playing.
-In the future this game will be restructured into a daily guessing game, where everyone tries the same riddle each day. To achive this the game need to be build on the server site. Then caching the current state is an option that can be implemented to save the current game state.
+Since the information on how to play is on a different site, the progress of the game gets lost when checking it out mid playing.
+In the future this game will be restructured into a daily guessing game, where everyone tries the same riddle each day. To make this possible, the game has to be build on the server site. Then caching the current state is an option that can be implemented to save the current game state.
 
 #### Spaces and Special Characters in Guesses
-When entering a guess, the spelling in the Option provided might not fit the name that is returned by the request. Usually that is the case with blank spaces in Names.
-
-I tried to handle as many cases as possible by adjusting the Input Option, but there might still be cases left. Since in the long rung this will get obsulent by changing the system to check IDs instead of names, this was not an issue I focused on.
+When entering a guess, the spelling in the Option provided might not fit the name that is returned by the request. Usually that is the case with blank spaces in Names. I tried to handle as many cases as possible by adjusting the Input Option, but there might still be cases left. Since in the long run this will not be needed when changing the system to check IDs instead of names, this was not an issue I focused on.
 
 #### Edgecases in Station Names
-Sometimes a stopp is not checked correctly due to multiple spelling option.
+Sometimes a stop is not checked correctly due to multiple spelling option.
 
 Known examples:
 * Köln Messe/Deutz and Köln Messe/Deutz Gl.11-12
@@ -114,23 +112,23 @@ Known examples:
 * Berlin Hbf and Berlin Hbf (tief)
 * (and maybe more cases)
 
-In these cases a stopp has one unique ID, but multplie names. Instead of handling all Edgecases seperatly the better option would be to check IDs in the future.
+In these cases, a step has one unique ID, but multiple names. Instead of handling all Edge cases seperatly, the better option would be to check IDs in the future.
 
 #### Error: "Line.data.line is undefined"
-Sometimes, when loading the site the error "Line.data.line is undefined" can be seen in the console.
-When this happens it's not possible to guess any stopps on the way and any guesses unless the correct answer is turning red.
+Sometimes, when loading the site the error "Line. data. line is undefined" can be seen in the console.
+When this happens, it's not possible to guess any stops on the way and any guesses unless the correct answer is turning red.
 [pictures of the error message]
 
 ##### The problem
-When building this project I assumed that all 'legs' (the way from a to b) of the request return a specific train, since this is a train journey. But as it turns out: when changing from a regional to a long distance train it can be neccessary to change the part of the train station. From Berlin Hbf to Berlin Hbf (tief). Sometimes tracks are outside or seperatied from train stations, for Example "Hamburg Hbf" and "Hamburg Hbf (S-Bahn)".
-In these edge cases the journey between the two stops in question is taken by foot and there is no line name and id avalable. The request throws an error and the array is never filled with the stops and stays empty.
+When building this project, I assumed that all 'legs' (the way from a to b) of the request return a specific train, since this is a train journey. But as it turns out: when changing from a regional to a long distance train it can be necessary to change the part of the train station. From Berlin Hbf to Berlin Hbf (tief). Sometimes the tracks are outside or separate from train stations, for Example "Hamburg Hbf" and "Hamburg Hbf (S-Bahn)".
+In these edge cases, the journey between the two stops in question is taken by foot and there is no line name and id available. The request throws an error and the array is never filled with the stops and stays empty.
 
 ##### How to fix this issue
-When getting the id and name there needs to be a check if the value is undefinied or empty.
-When this is the case the request for stops should not be send. Instead only the current Station the person is walking to need to be added.
+When getting the id and name there needs to be a check if the value is undefined or empty.
+When this is the case, the request for stops should not be sent. Instead, only the current Station, the person is walking to need to be added.
 
 ##### Why this isn't fixed yet
-Sadly this issue isn't fixed easily. While checking for undefined or empty values can be easily done, the current system is designt around loops that match the amount of transfers. To exit these loops it's nececery that the names of stations match precisely, which isn't always the case (as seen above). If not, some loops might run forever and break the prograg. So in the long run this should be fixed by compairing IDs. This would need a complete restruchture of the code and isn't possible in the given time.
+Sadly, this issue isn't fixed easily. While checking for undefined or empty values can be easily done, the current system is designed around loops that match the amount of transfers. To exit these loops it's necessary that the names of stations match precisely, which isn't always the case (as seen above). If not, some loops might run forever and break the program. So in the long run this should be fixed by compiling IDs. This would need a complete restructure of the code and isn't possible in the given time.
 
 ## Deployment
 
