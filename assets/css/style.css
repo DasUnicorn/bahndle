@@ -139,9 +139,10 @@ label {
 }
 
 .btn-black {
-	background-color: var(--color-highlight);
-	border: solid var(--color-highlight);
+	background-color: black;
+	border: solid black;
 	color: var(--color-text);
+	width: 100px;
 
 }
 
