@@ -73,7 +73,7 @@ button {
 	margin: 10px;
 	color: var(--color-highlight);
 	background-color: var(--color-text);
-	border-color: #000000;
+	border: solid var(--color-text);
 	padding: 20px;
 	border-radius: 25px;
 	letter-spacing: .05em;
@@ -112,6 +112,7 @@ h2 {
 
 .head {
 	margin-right: 5px;
+	border-color: var(--color-text);
 }
 
 /* Input Fields */
@@ -130,7 +131,7 @@ label {
 
 .btn-red {
 	background-color: var(--color-highlight);
-	border-color: var(--color-highlight);
+	border: solid var(--color-highlight);
 	color: var(--color-text);
 }
 
