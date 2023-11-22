@@ -15,14 +15,14 @@
 
 <body>
 	<header class="flex-row end">
-		<a href="info.html"><button class="close" aria-label="close this site and return to front page."><img src="assets/img/info.png" class="small" alt="info-icon"></button></a>
-		<a href="index.html"><button class="close" aria-label="close this site and get to information page on how to play."><img src="assets/img/close.png" class="small" alt="close-icon"></button></a>
+		<a href="info.html" class="button close" aria-label="close this site and return to front page."><img src="assets/img/info.png" class="small" alt="info-icon"></a>
+		<a href="index.html" class="button close" aria-label="close this site and get to information page on how to play."><img src="assets/img/close.png" class="small" alt="close-icon"></a>
 	</header>
 	<section class="flex-col">
 		<h1><span class="highlight head">bahn</span>dle</h1>
 		<p>You start at <span class="strong" id="start">loading</span>. Your journey takes <span id="time" class="strong">loading</span> and <span id="transfer" class="strong">loading</span> transfers.</p>
 		<label>Where is your final destination? Take a shot and make a guess!</label>
-		<input list="stations" id="station-choice" name="station-choice" placeholder="Write a train station here..." />
+		<input list="stations" id="station-choice" name="station-choice" placeholder="Write a train station here...">
 		<datalist id="stations">
 			<option value="Baden-Baden"></option>
 			<option value="Bruchsal"></option>
