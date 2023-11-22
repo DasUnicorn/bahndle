@@ -193,15 +193,29 @@ Every page of the website was validated using the W3C tool. No errors (only one 
 #### Accessibility
 The result of the WAVE Web Accessibility Evaluation Tool shows 0 Errors.
 
-![Wave Test Result index](/assets/img/readme/wave-index.png)
-![Wave Test Result game](/assets/img/readme/wave-game.png)
-![Wave Test Result info](/assets/img/readme/wave-info.png)
+<img src="/assets/img/readme/wave-index.png" alt="Results WAVE Web Accessibility Evaluation Tool for index" width="300">
+<img src="/assets/img/readme/wave-game.png" alt="Results WAVE Web Accessibility Evaluation Tool for game" width="300">
+<img src="/assets/img/readme/wave-info.png" alt="Results WAVE Web Accessibility Evaluation Tool for info" width="300">
 
 #### JS Hint
 The result of the JSHint Tool shows 0 Errors.
 ![JS Test Result](/assets/img/readme/js-hint.png)
 
 ### Manual Testing
+
+| Feature                                                           | Site       | Expected Outcome                                                                                                                                                 | Testing Performed                                      | Result                                                                                 | Pass/Fail |
+|-------------------------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------------------------|-----------|
+| Starting the game                                                 | index.html | When clicking the "play"-Button, the user will get to game.html.                                                                                                 | Clicking Button Play.                                  | Got directed to game.html                                                              | Pass      |
+| Getting to the Information side                                   | index.html | When clicking the "How to play"-Button, the user will get to info.html.                                                                                          | Clicking Button How to Play.                           | Got directed to info.html                                                              | Pass      |
+| Getting to the game from info site                                | info.html  | When clicking the "play"-Button, the user will get to game.html.                                                                                                 | Clicking Button Play.                                  | Got directed to game.html                                                              | Pass      |
+| Closing the information site                                      | info.html  | When clicking the cross in the top right, the user should return to index.html                                                                                   | Clicked on cross on the top right                      | Got directed to index.html                                                             | Pass      |
+| Closing the game site                                             | game.html  | When clicking the cross in the top right, the user should return to index.html                                                                                   | Clicked on cross on the top right                      | Got directed to index.html                                                             | Pass      |
+| Getting from game to info site                                    | game.html  | When clicking the "i" in the top right, the user should return to info.html                                                                                      | Clicked on "i" on the top right                        | Got directed to info.html                                                              | Pass      |
+| Game doesn't accept empty input                                   | game.html  | When trying to enter an empty input by pressing the guess button without filling out anything, should return an alert and don't count a guess.                   | Clicking on guess without filling out the input field. | The alert "No valid guess entered. Please only use letters and round brackets." shows. | Pass      |
+| Game doesn't accept special characters that aren't round brackets | game.html  | When trying to enter a guess containing a special character that is not a round bracket, an alert should appear.                                                 | Entering "*+~'#!?\"§$%&/=<>\|" as a guess.             | The alert "No valid guess entered. Please only use letters and round brackets." shows. | Pass      |
+| Pop Up when player has won                                        | game.html  | When entering the correct result a pop up should open, informing the player about the win.                                                                       | Entering the correct result.                           | A pop up informs about the win.                                                        | Pass      |
+| Wrong guess is shown with a red mark                              | game.html  | When entering a completely wrong guess the guess should be displayed at the bottom with the name of the guess and a red indicator.                               | Entering a wrong guess.                                | A new guess appears on the screen with a red rectangle.                                | Pass      |
+| Stops are shown with a yellow mark and the time left              | game.html  | When entering a station that's a stop on the journey, the guess should be displayed with a yellow indicator as well as the time left to the correct destination. | Entering a stop.                                       | A new guess appears on the screen with a yellow rectangle and the time left.           | Pass      |
 
 
 ### Testing as Tutor / Grading Person
