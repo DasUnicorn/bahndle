@@ -38,18 +38,21 @@ section {
 	font-family: "Fira Regular";
 	src:
 		url("../fonts/Fira_Sans/FiraSans-Regular.ttf") format("truetype");
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "Fira Bold";
 	src:
 		url("../fonts/Fira_Sans/FiraSans-Bold.ttf") format("truetype");
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "Archivo Black";
 	src:
 		url("../fonts/Archivo_Black/ArchivoBlack-Regular.ttf") format("truetype");
+	font-display: swap;
 }
 
 /* Text Fonts */
@@ -96,7 +99,7 @@ h2 {
 
 .highlight {
 	color: var(--color-highlight);
-	border-color: solid #000000;
+	border: solid #000000;
 	background-color: var(--color-text);
 	border-radius: 20px;
 	padding: 10px;
