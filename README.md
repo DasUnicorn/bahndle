@@ -7,6 +7,20 @@ This project uses HTML/CSS/Vanilla JavaScript to display a fully responsive web 
 
 ![Lighthouse Test Result Game](/assets/img/readme/mockup.png)
 
+
+## Technologies Used
+
+* GitHub – storage and deployment
+* Sublime Text - Editor
+
+### Languages Used
+
+HTML, CSS, Java Script
+
+### Frameworks, Libraries & Programs Used
+
+Github
+
 ## Design
 My design is isnpired by the actual [color scheme](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Farbe) and [typography](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Typografie) of the Deutsche Bahn. For Copyright reasons I try to find an simular asthetic without copien the design or fonts directly.
 
