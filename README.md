@@ -1,11 +1,9 @@
 # BAHNdle
-Bahndle *('Bahn'- german for train)* is a german train journey guessing game with real time train Data.
-Provided with a start locatiion, the time needed to reach the searched destination as well as the number of transfers the journey takes, the user has to find the destination.
-The goal is to find the destination in as few guesses as possible. A challenge targetted to the Train-Nerd-Community, that like me, take all her travels through the country only on public transport and have a good knowledge of the train network in general.
+Bahndle, which plays on the German word for train, "Bahn," is a guessing game centered around German train journeys. It utilizs real-time train data. With initial information such as the starting location, estimated travel time, and the number of transfers involved, users are tasked with identifying the destination. The objective is to achieve this with as few guesses as possible, creating a challenge tailored for the Train-Nerd-Community. This community, much like myself, embraces travel exclusively via public transport and possesses a comprehensive knowledge of the train network.
 
-This project uses HTML/CSS/Vanilla JavaScript to display a fully responsive web experience. And uses the [Rest API by Jannis](https://v6.db.transport.rest/) for live data.
+The project is developed using HTML, CSS, and Vanilla JavaScript to deliver a fully responsive web experience. Live data is sourced through the [Rest API by Jannis](https://v6.db.transport.rest/), enhancing the dynamic nature of the game.
 
-![Lighthouse Test Result Game](/assets/img/readme/mockup.png)
+![Mock up](/assets/img/readme/mockup.png)
 
 
 ## Technologies Used
@@ -22,16 +20,18 @@ HTML, CSS, Java Script
 Github
 
 ## Design
-My design is isnpired by the actual [color scheme](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Farbe) and [typography](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Typografie) of the Deutsche Bahn. For Copyright reasons I try to find an simular asthetic without copien the design or fonts directly.
+My design takes inspiration from the authentic [color palette](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Farbe) and [typography](https://marketingportal.extranet.deutschebahn.com/marketingportal/Marke-und-Design/Basiselemente/Typografie) of Deutsche Bahn. In consideration of copyright, I aim to capture a similar aesthetic without directly replicating the design or using identical fonts. The overall game, particularly the initial page, draws inspiration from the concept of [Wordle](https://www.nytimes.com/games/wordle/index.html).
 
 ## Features 
 
 ### Existing Features
 
 #### Logo
+The logo incorporates a creative play with fonts, where the word "Bahn" is artistically styled to resemble an abstract representation of an Intercity-Express Train. This design is seamlessly combined with an illustration of the train featured on the front page.
 <img src="/assets/img/readme/logo.png" width="300px">
 
 #### Start Page
+The landing page design draws inspiration from the layout of the [Wordle](https://www.nytimes.com/games/wordle/index.html) landing page. It features a "Play" button, directing users to the game, and a "How to Play" button, providing information on the game's rules and instructions.
 ![Startpage](/assets/img/readme/index.png)
 
 #### Help Page
