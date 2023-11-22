@@ -23,7 +23,6 @@ window.addEventListener("load", async () => {
             throw new Error("Network response was not OK");
         }
         journeyList = await response.json();
-        console.log(journeyList);
 
         //Set up the main info with the loaded journey
         setStart(journeyList);
@@ -102,7 +101,6 @@ function getTravelTime(journeyList) {
     let transfers = getTransfers(journeyList);
     endDate = journeyList.journeys[0].legs[transfers].arrival;
     startDate = journeyList.journeys[0].legs[0].departure;
-    console.log("EndDate: " + endDate + " and startDate: " + startDate);
     let travelTime = Math.abs(toTimestamp(endDate) - toTimestamp(startDate));
 
     return secondsToHms(travelTime);
@@ -233,7 +231,6 @@ async function setStops(journeyList) {
  * @param {string} input - a valid ICE train station.
  */
 function makeGuess(input) {
-    console.log("input: " + input);
     tryNumber += 1
     checkGuess(input);
 }
@@ -291,8 +288,6 @@ function addElementWin(input) {
 
 // 
 function addElementStop(input, stop) {
-    console.log("stop: ");
-    console.log(stop);
     // create a new div element
     const newDiv = document.createElement("div");
 
@@ -301,10 +296,8 @@ function addElementStop(input, stop) {
         return dt / 1000;
     };
     let timeStop = stop[1];
-    console.log(timeStop);
     let time = Math.abs(toTimestamp(endDate) - toTimestamp(timeStop));
     let cleanTime = secondsToHms(time);
-    console.log("Time: " + time);
 
     // and give it some content
     const newContent = document.createTextNode("🟨 " + input + " - Time Left: " + cleanTime);
