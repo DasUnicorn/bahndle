@@ -383,13 +383,12 @@ To fork the repository:
 
 
 ## Credits
-* Seconds to min and hours by Wilson Lee https://stackoverflow.com/questions/37096367/how-to-convert-seconds-to-minutes-and-hours-in-javascript
-* Rest API by Jannis https://v6.db.transport.rest/
-* https://github.com/derhuerst/db-rest
-* Fetching thigs from REST API https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-* Zug Image https://www.freeimages.com/de/clipart/train-clip-art-5341311
-* close icon https://www.freepik.com/icon/close_2976286#fromView=keyword&term=Close&page=1&position=0
-* info icon https://www.freepik.com/icon/information-symbol_16607#fromView=search&term=info&page=1&position=74&track=ais
-* modal / Pop up: https://www.youtube.com/watch?v=TAB_v6yBXIE
-* add a new div https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+* The JS function to turn a date time into Seconds, min and hours is by [Wilson Lee](https://stackoverflow.com/questions/37096367/how-to-convert-seconds-to-minutes-and-hours-in-javascript)
+* The Data come from the [Rest API by Jannis](https://v6.db.transport.rest/), more [API Doku](https://github.com/derhuerst/db-rest)
+* I learned how to fetch from REST API from [Mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+* The train image is taken from [freeimages.com](https://www.freeimages.com/de/clipart/train-clip-art-5341311)
+* The close icon is taken from [freepik](https://www.freepik.com/icon/close_2976286#fromView=keyword&term=Close&page=1&position=0)
+* The info icon is taken from [freepik](https://www.freepik.com/icon/information-symbol_16607#fromView=search&term=info&page=1&position=74&track=ais)
+* I learned how to do the modal / Pop up from [Kevin Powell](https://www.youtube.com/watch?v=TAB_v6yBXIE)
+* Code to add a new div is based on the [Mozilla guide](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
 * Markdown Table of Content by [Jon Schlinkert](https://github.com/jonschlinkert/markdown-toc)
