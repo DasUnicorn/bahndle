@@ -3,6 +3,8 @@ Bahndle, which plays on the German word for train, "Bahn," is a guessing game ce
 
 The project is developed using HTML, CSS, and Vanilla JavaScript to deliver a fully responsive web experience. Live data is sourced through the [Rest API by Jannis](https://v6.db.transport.rest/), enhancing the dynamic nature of the game.
 
+Check out the [live-site](https://dasunicorn.github.io/bahndle/index.html).
+
 ![Mock up](/assets/img/readme/mockup.png)
 
 # Content
