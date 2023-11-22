@@ -15,7 +15,7 @@ My design is isnpired by the actual [color scheme](https://marketingportal.extra
 ### Existing Features
 
 #### Logo
-![Try Area](/assets/img/readme/logo.png)
+<img src="/assets/img/readme/logo.png" width="300px">
 
 #### Start Page
 ![Startpage](/assets/img/readme/index.png)
