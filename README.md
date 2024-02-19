@@ -1,3 +1,13 @@
+> [!NOTE]
+> If you've stumbled upon this, you're probably curious about what I've been up to. This project was created by me as a certificate requirement. Therefore, this README might look intimidating, but it had to cover all the bases for grading.
+> 
+> **In short:**
+>
+> This is an HTML/CSS and JavaScript project that utilizes JavaScript to create a web game. I learned a lot about working with APIs, fetching real-life data, and using async functions to ensure smooth interactions. Accessibility and user experience were also focal points, teaching me how to make the game enjoyable and inclusive for all players.
+>
+> All the info below pertains to the project as of 2023 and may no longer be accurate. But I love this project so much, that I plan to turn it into a daily guessing game, once I have more freetime.
+
+---
 # BAHNdle
 Bahndle, which plays on the German word for train, "Bahn," is a guessing game centered around German train journeys. It utilizs real-time train data. With initial information such as the starting location, estimated travel time, and the number of transfers involved, users are tasked with identifying the destination. The objective is to achieve this with as few guesses as possible, creating a challenge tailored for the Train-Nerd-Community. This community, much like myself, embraces travel exclusively via public transport and possesses a comprehensive knowledge of the train network.
 
